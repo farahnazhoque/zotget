@@ -11,7 +11,7 @@ const Intro = () => {
     <div className="intro">
       <div>
         <h1>
-          Money talks, but all mine says is <span className="accent">goodbye.</span>
+          Money talks, but all mine says is <span className="accent">goodbye</span>.
         </h1>
         <p>
           Don't be like me. Start your journey today.
@@ -23,13 +23,14 @@ const Intro = () => {
             required
             placeholder="What is your name?" aria-label="Your Name" autoComplete="given-name"
           />
+          <input type="hidden" name="_action" value="newUser" />
           <button type="submit" className="btn btn--dark">
             <span>Create Account</span>
             <UserPlusIcon width={20} />
           </button>
         </Form>
       </div>
-      <img src={illustration} alt="Person with money" width={600} />
+      <img src={illustration} alt="Peter the anteater" width={600} />
     </div>
   )
 }

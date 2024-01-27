@@ -9,7 +9,7 @@ const Error = () => {
 
   return (
     <div className="error">
-      <h1>Zot Zot! Problem alert.</h1>
+      <h1>Zot zot, problem alert!!!</h1>
       <p>{error.message || error.statusText}</p>
       <div className="flex-md">
         <button
