@@ -28,7 +28,7 @@ svg {
   --lh-1-4: 1.4;
 
   /* colors */
-  --accent: 183 74% 44%;
+  --accent: 210 100% 31%;
   --bkg: 190 60% 98%;
   --text: 185 26% 9%;
   --muted: 183 8% 55%;
@@ -64,7 +64,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   /* background-color: hsl(var(--bkg)); */
-  background-color: #FFFFFF;
   color: hsl(var(--text));
 }
 
