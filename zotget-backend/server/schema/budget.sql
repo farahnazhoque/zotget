@@ -6,7 +6,7 @@ CREATE TABLE Budget (
   name VARCHAR(255) NOT NULL,
   total_amount DECIMAL(10, 2) NOT NULL,
   amount_spent DECIMAL(10, 2) DEFAULT 0.00,
-  amount_remaining DECIMAL(10, 2) AS (total_amount - amount_spent) STORED,
+  amount_remaining DECIMAL(10, 2) GENERATED ALWAYS AS (total_amount - amount_spent) STORED,
   FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
