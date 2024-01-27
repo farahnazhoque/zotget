@@ -1,5 +1,7 @@
+DROP TABLE IF EXISTS Expense;
+
 CREATE TABLE Expense (
-  expense_id INT AUTO_INCREMENT PRIMARY KEY,
+  expense_id serial PRIMARY KEY,
   budget_id INT,
   name VARCHAR(255) NOT NULL,
   amount DECIMAL(10, 2) NOT NULL,
