@@ -1,6 +1,5 @@
-require('dotenv').config({path: './.env'});
+require('dotenv').config({});
 const { Pool } = require('pg');
-
 const pool = new Pool({
     user: process.env.AWS_USER,
     password: process.env.AWS_PASSWORD,
@@ -11,5 +10,4 @@ const pool = new Pool({
   
 
 module.exports = pool;
-console.log(process.env.AWS_USER); // Should output "postgres"
-console.log(process.env.AWS_PASSWORD); // Should output the new password
+
