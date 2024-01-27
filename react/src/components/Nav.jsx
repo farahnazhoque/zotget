@@ -2,7 +2,6 @@
 import { Form, NavLink } from "react-router-dom"
 
 // library
-// terminal: npm install @heroicons/react
 import { TrashIcon } from '@heroicons/react/24/solid'
 
 // assets
@@ -13,11 +12,20 @@ const Nav = ({ userName }) => {
     <nav>
       <NavLink
         to="/"
-        aria-label="Go to home"
-      >
+        aria-label="Go to home">
+
         <img src={logomark} alt="" height={30} />
         <span>Zotget</span>
       </NavLink>
+
+      <NavLink to="/expenses" aria-label="Go to Expenses">
+        All Expenses
+      </NavLink>
+
+      <NavLink to="/overview" aria-label="Go to Overview">
+        Overview
+      </NavLink>
+
       {
         userName && (
           <Form
