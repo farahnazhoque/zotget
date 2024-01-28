@@ -6,11 +6,15 @@ const Popup = ({ title, onClose }) => {
   return (
     <div className="popup-container">
       <div className="popup">
-        <button className="close-button" onClick={onClose}>X</button>
-        <h3>{title}</h3>
-        <p>
-            Hello
-        </p>
+        <div className="popup-header">
+          <h3><span className="accent">{title}</span></h3>
+          <div className="tab"></div> {/*tab between title and close button */}
+          <button className="close-button" onClick={onClose}>
+            <span className="material-symbols-outlined">cancel</span>
+          </button>
+        </div>
+        <hr></hr>
+        <p>Hello</p>
       </div>
     </div>
   );
