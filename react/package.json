@@ -10,9 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.1.1",
+    "axios": "^1.6.7",
+    "chakra": "^0.0.3",
+    "chart.js": "^4.4.1",
+    "framer-motion": "^11.0.3",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-google-charts": "^4.0.1",
     "react-router-dom": "^6.21.3",
     "react-toastify": "^10.0.4"
   },
@@ -24,6 +33,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.0.8"
+    "vite": "^5.0.12"
   }
 }

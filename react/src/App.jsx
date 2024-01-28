@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useLoaderData } from "react-router-dom";
 
 // Library
 import { ToastContainer } from "react-toastify";
@@ -19,6 +19,7 @@ import ExpensesPage, {
   expensesAction,
   expensesLoader,
 } from "./pages/ExpensesPage";
+import OverviewPage, { overviewAction, overviewLoader } from "./pages/OverviewPage";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,13 @@ const router = createBrowserRouter([
         element: <ExpensesPage />,
         loader: expensesLoader,
         action: expensesAction,
+        errorElement: <Error />,
+      },
+      {
+        path: "overview",
+        element: <OverviewPage />,
+        loader: overviewLoader,
+        action: overviewAction,
         errorElement: <Error />,
       },
       {
