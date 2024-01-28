@@ -12,12 +12,12 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 4000; // Example: using port 5000 instead of 3001
 
-
-// Set up CORS with dynamic origin (adjust as needed)
+// Set up CORS with the correct origin
 app.use(cors({
-  origin: `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}`,
-  credentials: true,
-}));
+    origin: 'http://localhost:5173', // or 'http://127.0.0.1:5173' if you prefer using the IP
+    credentials: true,
+  }));
+  
 
 app.use(express.json()); // For parsing application/json
 
