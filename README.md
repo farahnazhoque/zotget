@@ -20,5 +20,8 @@ A personal budgeting web app with chart visualizations and AI suggestions to hel
 - Farahnaz Hoque
 - Grace Zhen
 
+## demo
+check out videoDemo.mov
+
 
 ![Zotget logo](/react/src/assets/peterLogo.svg)
