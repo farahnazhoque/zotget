@@ -1,36 +1,29 @@
-# How I created this new project
+# react
+## How to create new reactproject
 In terminal:
 ```
 npm create vite@latest projectfolder_name
-choose 'React' then 'javascript + swc'
+choose 'React' then 'Javascript + swc'
 cd projectfolder_name
 npm install
 ```
-Run app: ```npm run dev``` 
+Run app: ```npm run dev```
 
-# React + Vite
+## Downloadables 
+- Pie Chart: ```npm install chart.js ```
+- OpenAI api: ```npm install --save openai```
+- Axios: ```npm i axios```
 
+## OpenAI api
+Create a .env file in project directory to store the api secret key. 
+- Follow this format:
+    ```
+        VITE_OPENAI_API_KEY= "OPENAI_SECRET_KEY"
+    ```
+- This app uses model GPT3
+
+## React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
 Currently, two official plugins are available:
-
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-Pie Chart:
-npm install chart.js 
-
-## Usage
-
-- **Adding a Budget**: Navigate to the Budget page and enter your budget details.
-- **Adding Expenses**: Click on the Add Expense button and fill out the form with your expense details.
-- **AI-Powered Suggestions**: Click on any expense in the pie chart to get suggestions on how to save money.
-
-## Technologies
-
-- React
-- Vite
-- Chart.js
-- Axios
-- OpenAI API
-
