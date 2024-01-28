@@ -1,4 +1,4 @@
-# zotget
+# zotget 
 A personal budgeting web app with chart visualizations and AI suggestions to help you save money.
 - Created for IrvineHacks 2024 @ UCI Jan 26-28
 - Pronounced like "budget" but with "zot"
@@ -19,3 +19,6 @@ A personal budgeting web app with chart visualizations and AI suggestions to hel
 ## Members
 - Farahnaz Hoque
 - Grace Zhen
+
+
+![Zotget logo](/react/src/assets/peterLogo.svg)
