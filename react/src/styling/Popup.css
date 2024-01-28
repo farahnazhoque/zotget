@@ -12,10 +12,11 @@
 }
 
 .popup {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgb(250, 234, 164);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin: 30px;
 }
 
 .popup-header {
@@ -23,6 +24,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px; /* Adjust as needed */
+}
+
+.accent {
+    color: hsl(var(--accent));
 }
 
 .tab {
@@ -35,4 +40,18 @@
   font-size: 16px;
   cursor: pointer;
   color: red;
+}
+
+.popup-header h3 {
+    text-align: center;
+  }
+  
+  /* Right align the Markdown content */
+  .markdown-content {
+    text-align: right;
+  }
+  
+  li {
+    display: list-item;
+    text-align: left;
 }

@@ -19,3 +19,18 @@ Currently, two official plugins are available:
 
 Pie Chart:
 npm install chart.js 
+
+## Usage
+
+- **Adding a Budget**: Navigate to the Budget page and enter your budget details.
+- **Adding Expenses**: Click on the Add Expense button and fill out the form with your expense details.
+- **AI-Powered Suggestions**: Click on any expense in the pie chart to get suggestions on how to save money.
+
+## Technologies
+
+- React
+- Vite
+- Chart.js
+- Axios
+- OpenAI API
+
