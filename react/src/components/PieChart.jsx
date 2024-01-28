@@ -1,4 +1,4 @@
-// PieChart.js
+// PieChart.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 import { fetchData } from '../helpers';
@@ -7,6 +7,7 @@ import '../styling/PieChart.css'; // Import the CSS file for styles
 
 const BudgetPieChart = ({ budget, expenses }) => {
   const [selectedExpense, setSelectedExpense] = useState(null);
+  const [suggestion, setSuggestion] = useState(''); // added
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -35,14 +36,22 @@ const BudgetPieChart = ({ budget, expenses }) => {
       },
     });
 
-    const handleClick = (event) => {
+    const handleClick = async (event) => {
       const activePoints = pieChart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
+    
       if (activePoints.length) {
         const index = activePoints[0].index;
         const expense = budgetExpenses[index];
         setSelectedExpense(expense.name);
+    
+        // Fetch suggestion from OpenAI based on the selected expense. 
+        // TODO: adjust the prompt?
+        const openAiPrompt = `Provide money-saving suggestions for ${expense.name}`;
+        const suggestionResponse = await getOpenAIResponse(openAiPrompt);
+        setSuggestion(suggestionResponse || 'Failed to fetch suggestions from OpenAI.');
       }
     };
+    
 
     ctx.canvas.addEventListener('click', handleClick);
 
@@ -73,6 +82,22 @@ const PieChart = ({ expenses }) => {
       ))}
     </div>
   );
+  // return (
+  //   <>
+  //     <canvas ref={chartRef} />
+  //     {selectedExpense && (
+  //       <Popup
+  //         title={selectedExpense}
+  //         content={suggestion} // Pass the suggestion as content to the Popup
+  //         onClose={() => {
+  //           setSelectedExpense(null);
+  //           setSuggestion(''); // Clear suggestion when closing the Popup
+  //         }}
+  //       />
+  //     )}
+  //   </>
+  // );
+
 };
 
 export default PieChart;

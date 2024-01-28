@@ -1,8 +1,26 @@
 // Popup.js
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styling/Popup.css'; // Import the CSS file for the popup styles
+import {getOpenAIResponse} from "./Ai";
 
 const Popup = ({ title, onClose }) => {
+  // AI
+  const [popupContent, setPopupContent] = useState('');
+
+  useEffect(() => {
+    // Define your prompt or use a dynamic one based on your requirements
+    const prompt = `Provide money-saving suggestions for ${title}`;
+
+    // Fetch content from OpenAI API when the component mounts
+    const fetchData = async () => {
+      const response = await getOpenAIResponse(prompt);
+      setPopupContent(response || 'Failed to generate personalized suggestions.');
+    };
+
+    fetchData();
+  }, [title]); // Run the effect whenever the title changes
+
+
   return (
     <div className="popup-container">
       <div className="popup">
@@ -14,7 +32,9 @@ const Popup = ({ title, onClose }) => {
           </button>
         </div>
         <hr></hr>
-        <p>Hello</p>
+        <p>Tips:</p>
+        {/* where the AI response will show up */}
+        <p>{popupContent}</p>
       </div>
     </div>
   );
