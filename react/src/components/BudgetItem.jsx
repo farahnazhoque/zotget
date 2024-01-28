@@ -16,6 +16,7 @@ const BudgetItem = ({ budget, showDelete = false }) => {
   const spent = calculateSpentByBudget(id);
   const remaining = amount - spent;
   const isOverBudget = remaining < 0;
+  const isAtBudget = remaining == 0;
   
   return (
     <div
@@ -33,10 +34,16 @@ const BudgetItem = ({ budget, showDelete = false }) => {
       </progress>
       <div className="progress-text">
         <small>{formatCurrency(spent)} spent</small>
+
+        {isAtBudget && <span className="over-budget-text"> 
+          <strong><span class="material-symbols-outlined">done</span> 
+          Budget reached</strong>
+        </span>}
         {isOverBudget && <span className="over-budget-text"> 
           <strong><span class="material-symbols-outlined">warning</span> 
           Over budget!!!</strong>
         </span>}
+
         <small>{formatCurrency(amount - spent)} remaining</small>
       </div>
       {showDelete ? (
