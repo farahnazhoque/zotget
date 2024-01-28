@@ -14,10 +14,12 @@ import {
 const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount, color } = budget;
   const spent = calculateSpentByBudget(id);
-
+  const remaining = amount - spent;
+  const isOverBudget = remaining < 0;
+  
   return (
     <div
-      className="budget"
+      className={`budget ${isOverBudget ? 'over-budget' : ''}`}
       style={{
         "--accent": color,
       }}
@@ -31,6 +33,10 @@ const BudgetItem = ({ budget, showDelete = false }) => {
       </progress>
       <div className="progress-text">
         <small>{formatCurrency(spent)} spent</small>
+        {isOverBudget && <span className="over-budget-text"> 
+          <strong><span class="material-symbols-outlined">warning</span> 
+          Over budget!!!</strong>
+        </span>}
         <small>{formatCurrency(amount - spent)} remaining</small>
       </div>
       {showDelete ? (
