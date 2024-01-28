@@ -1,7 +1,6 @@
 import OpenAI from "openai";
 import axios from "axios"; // Make sure to import axios
 
-//const GPTKEY = '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';
 const GPTKEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 const GPT4TurboModel = "gpt-4-1106-preview";
